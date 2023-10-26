@@ -63,12 +63,35 @@ nav {
 
 }
 
+.nav_menu-bar.cross{
+  row-gap: 0px;
+}
+
 /* hamburger icon */
-.nav_menu-bar div {
-  width: 40px;
-  height: 4px;
+.nav_menu-bar span {
+  width: 1.5rem;
+  height: 0.125rem;
   background-color: black;
-  border-radius: 2px;
+  border-radius: 0.125rem;
+  opacity:100;
+}
+
+span.cross{
+  --transform-rotate: 45deg;
+  rotate: 45deg;
+  --transform-translate-y: 0.25rem;
+  transform: translateY(.25rem)
+}
+
+span.cross1 {
+  --transform-rotate: -45deg;
+  rotate: -45deg;
+  --transform-translate-y: 0.25rem;
+  transform: translateY(-0.25rem)
+}
+
+span.invisible{
+  opacity: 0;
 }
 
 
@@ -85,14 +108,16 @@ nav {
 
   transition: all 0.3s;
 
-  border-radius: 30px;
+  border-radius: .5rem;
   --tw-backdrop-blur: blur(20px);
   backdrop-filter: blur(50px);
   transform: translate(-50%, -50%);
 
-  top: 30%;
+  top: 50%;
   left: 50%;
-  padding: 8rem;
+  padding: 6rem;
+
+
 
 
 }
@@ -166,6 +191,13 @@ nav {
       pointer-events: all;
     }
 
+    .nav_menu-list{
+        min-width: 70vw;
+        text-align: center;
+    }
+
+
+
 
 
 
@@ -182,14 +214,14 @@ nav {
     min-height: fit-content;
     width: fit-content;
     align-items: center;
-    column-gap: 24px;
+    column-gap: 14px;
     flex-grow: 1;
     align-items: center;
     font-size: medium;
     background-color: transparent;
     --tw-backdrop-blur: none;
     backdrop-filter: none;
-    padding: 24px 16px;
+    padding: 1rem 0rem;
     top: 60px;
     right: -288px;
     transform: none;
@@ -224,7 +256,9 @@ nav {
 
 
 .end {
-  flex: 1;
+  /* flex: 1; */
+  /* display: inline; */
+  margin-right: 0.5rem;
 
 }
 

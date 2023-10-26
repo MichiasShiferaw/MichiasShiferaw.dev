@@ -16,7 +16,7 @@ function BlogPost({ title, author, thumbnail, datePublished, slug }) {
         <div className={styles.details}>
           <div className={styles.author}>
             <img src={author.avatar.url} alt={author.name} />
-            <h3>{author.name}</h3>
+            <h3 className={styles.authorName}>{author.name}</h3>
           </div>
           <div className={styles.date}>
             <h3>{moment(datePublished).format("MMMM Do, YYYY")}</h3>

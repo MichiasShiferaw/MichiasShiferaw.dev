@@ -20,12 +20,12 @@ function Nav() {
         <div className="nav_section">
           <div>
             <div
-              className="nav_menu-bar "
+              className={`nav_menu-bar ${navActive ? "cross" : ""}`}
               onClick={() => setNavActive(!navActive)}
             >
-              <div></div>
-              <div></div>
-              <div></div>
+              <span className={`${navActive ? "cross" : ""} `}></span>
+              <span className={`${navActive ? "invisible" : ""} `}></span>
+              <span className={`${navActive ? "cross1" : ""}  `}></span>
             </div>
           </div>
           <div className="creatorname" style={{ color: "#90EE90" }}>
@@ -59,9 +59,9 @@ function Nav() {
           </div>
           <div className="end">
             {/* <div className="githubLogo">Github Logo</div> */}
-            <GithubIcon/>
-            <LinkedInIcon/>
-            <ResumeIcon/>
+            <GithubIcon />
+            <LinkedInIcon />
+            <ResumeIcon />
           </div>
         </div>
       </nav>

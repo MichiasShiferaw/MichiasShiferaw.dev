@@ -41,6 +41,10 @@
     align-items: center;
 }
 
+.authorName {
+    display: flex;
+}
+
 .author {
     display: flex;
     align-items: center;
@@ -56,5 +60,9 @@
 @media screen and (max-width: 768px) {
     .card {
         margin: 0rem 2rem;
+    }
+
+    .authorName {
+        display: none;
     }
 }
