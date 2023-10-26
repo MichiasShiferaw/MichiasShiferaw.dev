@@ -1,21 +1,20 @@
+"use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useState } from "react";
-
-
+import { GithubIcon, LinkedInIcon, ResumeIcon } from "./Icons";
 
 const Navitems = ({ href, title, active }) => {
-  const router = useRouter();
+  // const router = useRouter();
   return (
-    <Link href={href} className={` nav_link ${active? 'active':"" }`}>
+    <Link href={href} className={` nav_link ${active ? "active" : ""}`}>
       {title}
     </Link>
   );
 };
 
-
 function Nav() {
-    const [navActive, setNavActive] = useState(null);
+  const [navActive, setNavActive] = useState(null);
 
   return (
     <>
@@ -35,7 +34,13 @@ function Nav() {
             <Link href="/">Michias Shiferaw</Link>
           </div>
 
-          <div className={`${navActive ? "active" : ""} nav_menu-list  `}>
+          <div className={`${navActive ? "" : "active"} nav_menu-list  `}>
+            <button
+              className="close-button"
+              onClick={() => setNavActive(false)}
+            >
+              &times;
+            </button>
             <div
               onClick={() => {
                 setActiveIdx("");
@@ -55,15 +60,16 @@ function Nav() {
             <div></div>
           </div>
           <div className="end">
-            <div className="githubLogo">Github Logo</div>
+            {/* <div className="githubLogo">Github Logo</div> */}
+            <GithubIcon/>
+            <LinkedInIcon/>
+            <ResumeIcon/>
           </div>
         </div>
       </nav>
+      <div className={`${navActive ? "active" : ""}`} id="overlay"></div>
     </>
   );
 }
-
-
-
 
 export default Nav;
