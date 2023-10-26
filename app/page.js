@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient(process.env.HYGRAPH_INFO);
 
 const QUERY = gql`
   {
-    posts {
+    posts(orderBy: datePublished_DESC) {
       id
       title
       datePublished
@@ -27,18 +27,6 @@ const QUERY = gql`
     }
   }
 `;
-
-// export async function getStaticProps() {
-//   const { posts } = await graphcms.request(QUERY);
-
-//   awa
-// //   return {
-// //     props: {
-// //       posts,
-// //     },
-// //     revalidate: 10,
-// //   };
-// }
 
 export async function fetchBlogs() {
   const { posts } = await graphcms.request(QUERY);

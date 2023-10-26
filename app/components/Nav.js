@@ -1,11 +1,9 @@
 "use client";
 import Link from "next/link";
-// import { useRouter } from "next/router";
 import { useState } from "react";
 import { GithubIcon, LinkedInIcon, ResumeIcon } from "./Icons";
 
 const Navitems = ({ href, title, active }) => {
-  // const router = useRouter();
   return (
     <Link href={href} className={` nav_link ${active ? "active" : ""}`}>
       {title}
